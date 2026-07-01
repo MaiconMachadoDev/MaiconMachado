@@ -92,16 +92,11 @@ export const portfolioConfig = {
       { numero: '01', conteudo: '< Olá, eu sou Maicon Machado ! >', destaque: 'tag' },
       {
         numero: '02',
-        conteudo: '< Transformo 11 anos de experiência na área',
+        conteudo: '< Engenharia de software aplicada a Health Tech 💻 >',
         destaque: 'tag',
       },
       {
         numero: '03',
-        conteudo: 'da saúde em soluções Health Tech 💻 . >',
-        destaque: 'texto',
-      },
-      {
-        numero: '04',
         conteudo: '< Desenvolvedor Full-stack na Inova Rise >',
         destaque: 'tag',
       },

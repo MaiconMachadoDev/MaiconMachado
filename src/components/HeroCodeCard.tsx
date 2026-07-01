@@ -21,7 +21,7 @@ function LinhaDestaque({ linha }: { linha: LinhaCodigo }) {
   return (
     <div className="flex gap-3 sm:gap-4">
       <span
-        className="w-6 shrink-0 select-none text-right text-xs text-gray-300 sm:w-8 sm:text-sm"
+        className="w-6 shrink-0 select-none text-right text-xs text-gray-500 sm:w-8 sm:text-sm"
         aria-hidden="true"
       >
         {linha.numero}
@@ -60,7 +60,7 @@ export function HeroCodeCard({
             </div>
             <p
               id="hero-code-card"
-              className="ml-2 font-mono text-xs text-gray-400"
+              className="ml-2 font-mono text-xs text-gray-600"
             >
               {tituloArquivo}
             </p>
@@ -75,7 +75,7 @@ export function HeroCodeCard({
         </article>
 
         {/* Subtítulo */}
-        <p className="mt-6 text-center text-sm leading-relaxed text-gray-500 sm:text-base">
+        <p className="mt-6 text-center text-sm leading-relaxed text-gray-700 sm:text-base">
           {subtitulo}
         </p>
 
@@ -83,7 +83,7 @@ export function HeroCodeCard({
         <div className="mt-8 flex justify-center">
           <a
             href={scroll.href}
-            className="group flex flex-col items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-accent"
+            className="group flex flex-col items-center gap-2 text-sm font-medium text-gray-600 transition-colors hover:text-accent"
             aria-label={`${scroll.texto} — rolar para a próxima seção`}
           >
             <span>{scroll.texto}</span>

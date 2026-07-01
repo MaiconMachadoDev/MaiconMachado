@@ -19,9 +19,9 @@ const config: Config = {
           hover: '#1D4ED8',
         },
         code: {
-          tag: '#7C3AED',
-          text: '#374151',
-          string: '#059669',
+          tag: '#5B21B6',
+          text: '#1F2937',
+          string: '#047857',
         },
       },
       animation: {

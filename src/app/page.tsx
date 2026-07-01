@@ -4,12 +4,11 @@ import { HeroCodeCard } from '@/components/HeroCodeCard';
 import { ProjectCarousel } from '@/components/ProjectCarousel';
 import { SobreSection } from '@/components/SobreSection';
 import { TrajetoriaSection } from '@/components/TrajetoriaSection';
-import { TopCTA } from '@/components/TopCTA';
 import { portfolioConfig } from '@/config/portfolio';
 import { buscarRepositorios } from '@/services/github';
 import { montarListaProjetos } from '@/utils/projetos';
 
-const { hero, cta, tecnologias, projetos, sobre, github, rodape, perfil } =
+const { hero, tecnologias, projetos, sobre, github, rodape, perfil } =
   portfolioConfig;
 
 export default async function PaginaInicial() {
@@ -32,7 +31,6 @@ export default async function PaginaInicial() {
 
         <div className="relative z-10">
           <FloatingTechIcons tecnologias={tecnologias} />
-          <TopCTA texto={cta.texto} href={cta.href} rotulo={cta.rotulo} />
           <HeroCodeCard
             tituloArquivo={hero.tituloArquivo}
             linhas={hero.linhas}

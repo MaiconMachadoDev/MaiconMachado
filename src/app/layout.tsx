@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const { seo, perfil, navegacao, redesSociais } = portfolioConfig;
+const { seo, perfil, navegacao, redesSociais, cta } = portfolioConfig;
 
 export const metadata: Metadata = {
   title: {
@@ -56,6 +56,7 @@ export default function RootLayout({
           perfil={perfil}
           navegacao={navegacao}
           redesSociais={redesSociais}
+          cta={cta}
         />
 
         <div className="relative min-h-screen lg:pl-64">

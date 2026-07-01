@@ -15,6 +15,11 @@ interface SidebarProps {
   };
   navegacao: readonly ItemNavegacao[];
   redesSociais: readonly RedeSocial[];
+  cta: {
+    texto: string;
+    href: string;
+    rotulo: string;
+  };
 }
 
 function IconeNav({ tipo }: { tipo: IconeNavegacao }) {
@@ -78,14 +83,32 @@ function IconeSocial({ tipo }: { tipo: IconeSocial }) {
   }
 }
 
+function IconeDownload() {
+  return (
+    <svg
+      className="h-[18px] w-[18px] shrink-0"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16" />
+    </svg>
+  );
+}
+
 function ConteudoSidebar({
   perfil,
   navegacao,
   redesSociais,
+  cta,
   onLinkClick,
 }: SidebarProps & { onLinkClick?: () => void }) {
+  const hrefCv = urlAsset(cta.href);
+
   return (
-    <>
+    <div className="flex h-full flex-col">
       <div className="flex flex-col items-center px-6 pt-10 text-center">
         <div className="relative mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-gray-100 shadow-sm">
           <Image
@@ -117,7 +140,17 @@ function ConteudoSidebar({
         </ul>
       </nav>
 
-      <div className="border-t border-gray-100 px-6 py-6">
+      <div className="mt-auto flex w-full flex-col gap-4 px-4 pb-4">
+        <a
+          href={hrefCv}
+          download={cta.href.endsWith('.pdf') ? true : undefined}
+          aria-label={cta.rotulo}
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700"
+        >
+          <IconeDownload />
+          {cta.texto}
+        </a>
+
         <ul className="flex justify-center gap-5" role="list" aria-label="Redes sociais">
           {redesSociais.map((rede) => (
             <li key={rede.nome}>
@@ -133,24 +166,25 @@ function ConteudoSidebar({
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 
-export function Sidebar({ perfil, navegacao, redesSociais }: SidebarProps) {
+export function Sidebar({ perfil, navegacao, redesSociais, cta }: SidebarProps) {
   const [menuAberto, setMenuAberto] = useState(false);
 
   return (
     <>
       {/* Sidebar desktop */}
       <aside
-        className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-r border-gray-100 bg-white lg:flex"
+        className="fixed inset-y-0 left-0 z-30 hidden h-full w-64 flex-col border-r border-gray-100 bg-white lg:flex"
         aria-label="Barra lateral"
       >
         <ConteudoSidebar
           perfil={perfil}
           navegacao={navegacao}
           redesSociais={redesSociais}
+          cta={cta}
         />
       </aside>
 
@@ -195,7 +229,7 @@ export function Sidebar({ perfil, navegacao, redesSociais }: SidebarProps) {
       )}
       <aside
         id="menu-mobile"
-        className={`fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r border-gray-100 bg-white transition-transform duration-300 lg:hidden ${
+        className={`fixed inset-y-0 left-0 z-40 flex h-full w-64 flex-col border-r border-gray-100 bg-white transition-transform duration-300 lg:hidden ${
           menuAberto ? 'translate-x-0' : '-translate-x-full'
         }`}
         aria-label="Menu de navegação mobile"
@@ -205,6 +239,7 @@ export function Sidebar({ perfil, navegacao, redesSociais }: SidebarProps) {
           perfil={perfil}
           navegacao={navegacao}
           redesSociais={redesSociais}
+          cta={cta}
           onLinkClick={() => setMenuAberto(false)}
         />
       </aside>

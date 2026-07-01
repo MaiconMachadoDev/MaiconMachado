@@ -174,11 +174,13 @@ export const portfolioConfig = {
 
 Atuei como responsável pela arquitetura e desenvolvimento da aplicação, projetando uma solução escalável, segura e de alta disponibilidade para um ambiente crítico da área da saúde. Desenvolvi funcionalidades que abrangem desde o mapa cirúrgico em tempo real e controle de salas até dashboards gerenciais, gestão de convênios, médicos, equipamentos, materiais e processos administrativos.
 
-A plataforma foi construída com **Next.js**, **React** e **TypeScript**, utilizando uma arquitetura moderna focada em desempenho, experiência do usuário e manutenção. Também implementei sincronização offline com **PouchDB/CouchDB**, integração com serviços em nuvem, autenticação, controle de permissões, geração de relatórios, dashboards analíticos e otimização de consultas e estado da aplicação para garantir rapidez e confiabilidade no uso diário.
+A plataforma foi construída com **Next.js**, **React** e **TypeScript**, utilizando uma arquitetura moderna focada em desempenho, experiência do usuário e manutenção. Também implementei sincronização offline com **CouchDB** e **PouchDB**, integração com serviços em nuvem, autenticação, controle de permissões, geração de relatórios, dashboards analíticos e otimização de consultas e estado da aplicação para garantir rapidez e confiabilidade no uso diário.
+
+Todo o desenvolvimento é conduzido com **Cursor** como ambiente principal de codificação.
 
 Além do desenvolvimento técnico, participei da definição da arquitetura do produto, modelagem de dados, criação da experiência do usuário e evolução contínua da plataforma em conjunto com equipes hospitalares, transformando necessidades operacionais em funcionalidades que aumentam a eficiência, reduzem falhas e melhoram a rastreabilidade dos processos cirúrgicos.`,
         url: '#',
-        linguagem: 'Next.js · React · TypeScript',
+        linguagem: 'Next.js · React · TypeScript · CouchDB · PouchDB',
         imagemUrl: '/images/projects/unicirurgia.png',
         repositorioConfidencial: true,
         linkDeploy: 'https://unicirurgia.com/',
@@ -187,9 +189,9 @@ Além do desenvolvimento técnico, participei da definição da arquitetura do p
       {
         nome: 'LabyWallet',
         descricao:
-          'Uma carteira digital inteligente desenvolvida para o armazenamento e gestão centralizada de exames, prescrições e laudos médicos. Este foi um projeto que originalmente seria descontinuado, mas propus e assumi a frente da sua remodelagem completa. A plataforma agora conta com integração avançada de Inteligência Artificial para gerar insights personalizados de saúde para o usuário, tudo construído sob rigorosos padrões de segurança e conformidade total com a LGPD.',
+          'Uma carteira digital inteligente desenvolvida para o armazenamento e gestão centralizada de exames, prescrições e laudos médicos. Este foi um projeto que originalmente seria descontinuado, mas propus e assumi a frente da sua remodelagem completa. A plataforma agora conta com integração avançada de Inteligência Artificial para gerar insights personalizados de saúde para o usuário, tudo construído sob rigorosos padrões de segurança e conformidade total com a LGPD. A persistência de dados utiliza **PostgreSQL**, e o desenvolvimento é realizado com **Cursor** como ambiente principal de codificação.',
         url: '#',
-        linguagem: 'Next.js · React',
+        linguagem: 'Next.js · React · PostgreSQL',
         imagemUrl: '/images/projects/labywallet.png',
         repositorioConfidencial: true,
         linkDeploy: 'https://www.labywallet.com/',

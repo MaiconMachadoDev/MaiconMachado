@@ -20,22 +20,6 @@ interface EtapaTrajetoria {
 
 const ETAPAS: readonly EtapaTrajetoria[] = [
   {
-    id: 'enfermagem',
-    ano: '2015',
-    titulo: 'Da Enfermagem à Tecnologia',
-    resumo: 'Conciliando precisão hospitalar e código...',
-    detalhes:
-      'Com **11 anos de experiência clínica**, desenvolvi uma visão privilegiada sobre as **dores reais da rotina hospitalar** — desde a pressão do plantão até os gargalos de informação no leito do paciente. Essa vivência me mostrou que tecnologia bem aplicada não substitui o cuidado humano: ela **liberta o profissional** para focar no que realmente importa.\n\nA transição de carreira não foi um abandono da saúde, mas uma **evolução natural**: levei para o desenvolvimento a mesma disciplina, atenção aos detalhes e senso de urgência que a enfermagem exige todos os dias.',
-    conquistas: [
-      '11 anos de atuação clínica em ambiente hospitalar',
-      'Visão de produto orientada à realidade do profissional de saúde',
-      'Base sólida para soluções HealthTech com propósito',
-    ],
-    stack: ['Enfermagem Clínica', 'Gestão de Cuidado', 'HealthTech'],
-    imagem: 'enfermagem.jpeg',
-    imagemAlt: 'Maicon em uniforme de enfermagem em ambiente hospitalar',
-  },
-  {
     id: 'estagio',
     ano: '2025',
     titulo: 'Estágio e Desenvolvimento',

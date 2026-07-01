@@ -102,7 +102,7 @@ export const portfolioConfig = {
       },
       {
         numero: '04',
-        conteudo: '< Desenvolvedor Full-stack & Sócio na Inova Rise >',
+        conteudo: '< Desenvolvedor Full-stack na Inova Rise >',
         destaque: 'tag',
       },
     ] satisfies LinhaCodigo[],
@@ -228,9 +228,9 @@ Um jogo interativo de adivinhação focado no nicho de aquarismo, criado como pr
   sobre: {
     titulo: 'Sobre Mim',
     paragrafos: [
-      'Sou desenvolvedor Full-stack e sócio da Inova Rise, empresa Health Tech focada em soluções de alta performance para hospitais e clínicas.',
-      'Com 11 anos de experiência na área da saúde — incluindo vivência como profissional de enfermagem — trago uma visão única para construir software que funciona no chão de operação.',
-      'Atuo na criação de plataformas como Unicirurgia (gestão cirúrgica) e Laby Wallet (carteira digital para clínicas), sempre priorizando interfaces fluidas, segurança e escalabilidade.',
+      'Sou Desenvolvedor Full Stack com uma trajetória em que uno a precisão e a empatia da área da saúde com a escalabilidade da tecnologia. Minha formação técnica em Enfermagem me deu uma visão privilegiada sobre as dores reais de profissionais da clínica e pacientes. Hoje, traduzo essa experiência em código, construindo aplicações funcionais que geram impacto real na vida das pessoas.',
+      'Atualmente, atuo como Desenvolvedor Full Stack na Inova Rise, uma empresa HealthTech focada em soluções de alta performance para hospitais e clínicas. Participo ativamente da concepção e escalabilidade de plataformas complexas, como o desenvolvimento de mapas cirúrgicos visuais em tempo real (Unicirurgia) e a construção de fluxos seguros e performáticos para carteiras digitais clínicas (Laby Wallet).',
+      'Sei que na área da saúde a segurança não pode ser uma barreira, mas sim o trilho que permite a operação correr com precisão. Por isso, além de priorizar interfaces fluidas e escaláveis, aplico arquiteturas modernas e seguras nos meus projetos, incluindo abordagens híbridas de controle de acesso (RBAC e ABAC) e design Offline-First.',
     ],
   },
 

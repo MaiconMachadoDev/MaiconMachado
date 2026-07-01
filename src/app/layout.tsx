@@ -1,14 +1,10 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { SiteFooter } from '@/components/SiteFooter';
-import { SiteHeader } from '@/components/SiteHeader';
-import config from '@/data/config.json';
-import type { ConfiguracaoSite } from '@/types/config';
+import { Sidebar } from '@/components/Sidebar';
+import { portfolioConfig } from '@/config/portfolio';
 
 import './globals.css';
-
-const configuracao = config as ConfiguracaoSite;
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,27 +16,29 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const { seo, perfil, navegacao, redesSociais } = portfolioConfig;
+
 export const metadata: Metadata = {
   title: {
-    default: configuracao.seo.titulo,
-    template: `%s | ${configuracao.perfil.nome}`,
+    default: seo.titulo,
+    template: `%s | ${perfil.nome}`,
   },
-  description: configuracao.seo.descricao,
-  metadataBase: new URL(configuracao.seo.url),
+  description: seo.descricao,
+  metadataBase: new URL(seo.url),
   openGraph: {
-    title: configuracao.seo.titulo,
-    description: configuracao.seo.descricao,
-    url: configuracao.seo.url,
-    locale: configuracao.seo.locale,
+    title: seo.titulo,
+    description: seo.descricao,
+    url: seo.url,
+    locale: seo.locale,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: configuracao.seo.titulo,
-    description: configuracao.seo.descricao,
+    title: seo.titulo,
+    description: seo.descricao,
   },
   alternates: {
-    canonical: configuracao.seo.url,
+    canonical: seo.url,
   },
 };
 
@@ -52,19 +50,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-surface font-sans text-gray-800`}
       >
-        <SiteHeader
-          perfil={configuracao.perfil}
-          redesSociais={configuracao.redesSociais}
+        <Sidebar
+          perfil={perfil}
+          navegacao={navegacao}
+          redesSociais={redesSociais}
         />
-        <main className="mx-auto min-h-[60vh] max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
-          {children}
-        </main>
-        <SiteFooter
-          texto={configuracao.site.rodape}
-          nome={configuracao.perfil.nome}
-        />
+
+        <div className="relative min-h-screen lg:pl-64">
+          <main className="pt-14 lg:pt-0">{children}</main>
+        </div>
       </body>
     </html>
   );

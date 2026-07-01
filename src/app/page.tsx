@@ -1,45 +1,92 @@
+import { FloatingTechIcons } from '@/components/FloatingTechIcons';
+import { HeroCodeCard } from '@/components/HeroCodeCard';
 import { ProjectCard } from '@/components/ProjectCard';
-import config from '@/data/config.json';
+import { TopCTA } from '@/components/TopCTA';
+import { portfolioConfig } from '@/config/portfolio';
 import { buscarRepositorios } from '@/services/github';
-import type { ConfiguracaoSite } from '@/types/config';
 
-const configuracao = config as ConfiguracaoSite;
+const { hero, cta, tecnologias, projetos, sobre, github, rodape } =
+  portfolioConfig;
 
 export default async function PaginaInicial() {
-  const repositorios = await buscarRepositorios(configuracao.github.usuario);
+  const repositorios = await buscarRepositorios(github.usuario);
 
   return (
-    <section aria-labelledby="titulo-projetos">
-      <header className="mb-8">
-        <h2
-          id="titulo-projetos"
-          className="mb-2 text-2xl font-bold tracking-tight text-gray-900"
-        >
-          {configuracao.site.tituloProjetos}
-        </h2>
-        <p className="text-sm leading-relaxed text-gray-600">
-          {configuracao.site.subtituloProjetos}
-        </p>
-      </header>
+    <>
+      {/* Área Hero com elementos flutuantes */}
+      <div className="relative">
+        <FloatingTechIcons tecnologias={tecnologias} />
+        <TopCTA texto={cta.texto} href={cta.href} rotulo={cta.rotulo} />
+        <HeroCodeCard
+          tituloArquivo={hero.tituloArquivo}
+          linhas={hero.linhas}
+          subtitulo={hero.subtitulo}
+          scroll={hero.scroll}
+        />
+      </div>
 
-      {repositorios.length === 0 ? (
-        <p className="rounded-lg border border-dashed border-gray-300 bg-white p-8 text-center text-sm text-gray-500">
-          Nenhum repositório encontrado no momento. Verifique o usuário do
-          GitHub em{' '}
-          <code className="rounded bg-gray-100 px-1.5 py-0.5 text-xs">
-            src/data/config.json
-          </code>
-          .
-        </p>
-      ) : (
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {repositorios.map((repositorio) => (
-            <li key={repositorio.nome}>
-              <ProjectCard repositorio={repositorio} />
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
+      {/* Projetos */}
+      <section
+        id="projetos"
+        aria-labelledby="titulo-projetos"
+        className="border-t border-gray-100 bg-white px-4 py-16 sm:px-8"
+      >
+        <div className="mx-auto max-w-3xl">
+          <header className="mb-8">
+            <h2
+              id="titulo-projetos"
+              className="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+            >
+              {projetos.titulo}
+            </h2>
+            <p className="text-sm leading-relaxed text-gray-500">
+              {projetos.subtitulo}
+            </p>
+          </header>
+
+          {repositorios.length === 0 ? (
+            <p className="rounded-xl border border-dashed border-gray-200 p-8 text-center text-sm text-gray-400">
+              Nenhum repositório encontrado no momento.
+            </p>
+          ) : (
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2" role="list">
+              {repositorios.map((repositorio) => (
+                <li key={repositorio.nome}>
+                  <ProjectCard repositorio={repositorio} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      {/* Sobre */}
+      <section
+        id="sobre"
+        aria-labelledby="titulo-sobre"
+        className="border-t border-gray-100 px-4 py-16 sm:px-8"
+      >
+        <div className="mx-auto max-w-3xl">
+          <h2
+            id="titulo-sobre"
+            className="mb-6 text-2xl font-bold tracking-tight text-gray-900"
+          >
+            {sobre.titulo}
+          </h2>
+          <div className="space-y-4">
+            {sobre.paragrafos.map((paragrafo, indice) => (
+              <p key={indice} className="leading-relaxed text-gray-600">
+                {paragrafo}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rodapé */}
+      <footer className="border-t border-gray-100 px-4 py-8 text-center text-xs text-gray-400">
+        <p>© {new Date().getFullYear()} {portfolioConfig.perfil.nome}. {rodape.texto}</p>
+      </footer>
+    </>
   );
 }

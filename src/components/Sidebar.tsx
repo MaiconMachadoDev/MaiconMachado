@@ -33,6 +33,15 @@ function IconeNav({ tipo }: { tipo: IconeNavegacao }) {
           <path strokeLinecap="round" d="M3 7h18M3 12h18M3 17h18" />
         </svg>
       );
+    case 'trajetoria':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+          <circle cx="6" cy="6" r="2" />
+          <circle cx="18" cy="12" r="2" />
+          <circle cx="6" cy="18" r="2" />
+          <path strokeLinecap="round" d="M8 6h8M8 18h8M7.5 7.5l9 3M7.5 16.5l9-3" />
+        </svg>
+      );
     case 'sobre':
       return (
         <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">

@@ -1,6 +1,6 @@
 import type { DetalhesRepositorio } from '@/utils/projetos';
 
-export type IconeNavegacao = 'home' | 'projetos' | 'sobre';
+export type IconeNavegacao = 'home' | 'projetos' | 'trajetoria' | 'sobre';
 export type IconeSocial = 'github' | 'linkedin' | 'email';
 export type TecnologiaId = 'react' | 'nextjs' | 'javascript' | 'tailwind' | 'git';
 
@@ -55,6 +55,7 @@ export const portfolioConfig = {
   navegacao: [
     { id: 'home', rotulo: 'Home', href: '#home', icone: 'home' },
     { id: 'projetos', rotulo: 'Projetos', href: '#projetos', icone: 'projetos' },
+    { id: 'trajetoria', rotulo: 'Trajetória', href: '#trajetoria', icone: 'trajetoria' },
     { id: 'sobre', rotulo: 'Sobre Mim', href: '#sobre', icone: 'sobre' },
   ] satisfies ItemNavegacao[],
 

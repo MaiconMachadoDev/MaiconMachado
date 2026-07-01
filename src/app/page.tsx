@@ -3,6 +3,7 @@ import { GlowBlobs } from '@/components/GlowBlobs';
 import { HeroCodeCard } from '@/components/HeroCodeCard';
 import { ProjectCarousel } from '@/components/ProjectCarousel';
 import { SobreSection } from '@/components/SobreSection';
+import { TrajetoriaSection } from '@/components/TrajetoriaSection';
 import { TopCTA } from '@/components/TopCTA';
 import { portfolioConfig } from '@/config/portfolio';
 import { buscarRepositorios } from '@/services/github';
@@ -79,6 +80,8 @@ export default async function PaginaInicial() {
           )}
         </div>
       </section>
+
+      <TrajetoriaSection />
 
       <SobreSection
         titulo={sobre.titulo}

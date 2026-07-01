@@ -40,7 +40,7 @@ export const portfolioConfig = {
   perfil: {
     nome: 'Maicon Machado',
     cargo: 'Desenvolvedor Full-stack',
-    foto: '/avatar.svg',
+    foto: '/perfil.png',
     fotoAlt: 'Foto de perfil de Maicon Machado',
   },
 
@@ -81,7 +81,7 @@ export const portfolioConfig = {
 
   cta: {
     texto: 'Baixar CV',
-    href: '/cv.pdf',
+    href: '/CV_Maicon_Machado.pdf',
     rotulo: 'Baixar currículo em PDF',
   },
 

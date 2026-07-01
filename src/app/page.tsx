@@ -2,12 +2,13 @@ import { FloatingTechIcons } from '@/components/FloatingTechIcons';
 import { GlowBlobs } from '@/components/GlowBlobs';
 import { HeroCodeCard } from '@/components/HeroCodeCard';
 import { ProjectCarousel } from '@/components/ProjectCarousel';
+import { SobreSection } from '@/components/SobreSection';
 import { TopCTA } from '@/components/TopCTA';
 import { portfolioConfig } from '@/config/portfolio';
 import { buscarRepositorios } from '@/services/github';
 import { montarListaProjetos } from '@/utils/projetos';
 
-const { hero, cta, tecnologias, projetos, sobre, github, rodape } =
+const { hero, cta, tecnologias, projetos, sobre, github, rodape, perfil } =
   portfolioConfig;
 
 export default async function PaginaInicial() {
@@ -69,28 +70,12 @@ export default async function PaginaInicial() {
         </div>
       </section>
 
-      {/* Sobre */}
-      <section
-        id="sobre"
-        aria-labelledby="titulo-sobre"
-        className="border-t border-gray-100 px-4 py-16 sm:px-8"
-      >
-        <div className="mx-auto max-w-3xl">
-          <h2
-            id="titulo-sobre"
-            className="mb-6 text-2xl font-bold tracking-tight text-gray-900"
-          >
-            {sobre.titulo}
-          </h2>
-          <div className="space-y-4">
-            {sobre.paragrafos.map((paragrafo, indice) => (
-              <p key={indice} className="leading-relaxed text-gray-600">
-                {paragrafo}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SobreSection
+        titulo={sobre.titulo}
+        paragrafos={sobre.paragrafos}
+        foto={perfil.foto}
+        fotoAlt={perfil.fotoAlt}
+      />
 
       {/* Rodapé */}
       <footer className="border-t border-gray-100 px-4 py-8 text-center text-xs text-gray-400">

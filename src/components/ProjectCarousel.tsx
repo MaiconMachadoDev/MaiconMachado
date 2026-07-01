@@ -93,9 +93,10 @@ export function ProjectCarousel({ projetos }: ProjectCarouselProps) {
       </div>
 
       {/* SEÇÃO DIREITA/BAIXO: TEXTOS E BOTÕES */}
-      <div className="flex h-full min-h-[400px] w-full flex-1 flex-col px-6 py-2 text-center md:items-start md:justify-between md:px-12 md:py-8 md:text-left">
-        <div className="flex w-full max-w-2xl flex-col">
-          <div className="mb-6 hidden gap-4 md:flex">
+      <div className="flex h-[55vh] min-h-[420px] w-full flex-1 flex-col gap-4 px-6 py-2 text-center md:h-[70vh] md:gap-5 md:px-12 md:py-8 md:text-left">
+        {/* Cabeçalho fixo — setas, título e stack */}
+        <header className="flex w-full max-w-2xl shrink-0 flex-col gap-4 md:items-start">
+          <div className="hidden shrink-0 gap-4 md:flex">
             <button
               type="button"
               onClick={() => updateCarousel(currentIndex - 1)}
@@ -114,29 +115,29 @@ export function ProjectCarousel({ projetos }: ProjectCarouselProps) {
             </button>
           </div>
 
-          <div className="transition-opacity duration-500">
-            <h2 className="mb-2 text-3xl font-bold text-blue-950 md:text-5xl">
-              {projetoAtivo.nome}
-            </h2>
+          <h2 className="line-clamp-2 min-h-[4rem] text-3xl font-bold leading-tight text-blue-950 md:min-h-[5.5rem] md:text-5xl">
+            {projetoAtivo.nome}
+          </h2>
 
-            <div className="mb-4 flex flex-wrap items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-500 md:mb-6 md:justify-start">
-              {projetoAtivo.linguagem && (
-                <span>STACK: {projetoAtivo.linguagem}</span>
-              )}
-              <span>★ {projetoAtivo.estrelas || 0}</span>
-            </div>
+          <div className="flex min-h-[1.25rem] flex-wrap items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-500 md:justify-start">
+            {projetoAtivo.linguagem && (
+              <span>STACK: {projetoAtivo.linguagem}</span>
+            )}
+            <span>★ {projetoAtivo.estrelas || 0}</span>
           </div>
+        </header>
 
-          <div className="custom-scrollbar relative mb-6 max-h-[30vh] w-full overflow-y-auto pr-4 text-left md:mb-8 md:max-h-[45vh]">
-            <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-600 md:text-base">
-              {projetoAtivo.descricao
-                ? renderizarTextoComNegrito(projetoAtivo.descricao)
-                : 'Sem descrição disponível para este projeto no momento.'}
-            </p>
-          </div>
+        {/* Descrição — ocupa todo o espaço central restante */}
+        <div className="custom-scrollbar flex min-h-0 w-full max-w-2xl flex-1 overflow-y-auto pr-2 text-left md:pr-4">
+          <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-600 md:text-base">
+            {projetoAtivo.descricao
+              ? renderizarTextoComNegrito(projetoAtivo.descricao)
+              : 'Sem descrição disponível para este projeto no momento.'}
+          </p>
         </div>
 
-        <div className="mt-auto flex w-full flex-col gap-6 transition-opacity duration-500 md:gap-8">
+        {/* Rodapé fixo — botões e indicadores */}
+        <footer className="mt-auto flex w-full max-w-2xl shrink-0 flex-col gap-6 md:gap-8">
           <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
             {projetoAtivo.repositorioConfidencial ? (
               <span
@@ -200,7 +201,7 @@ export function ProjectCarousel({ projetos }: ProjectCarouselProps) {
               />
             ))}
           </div>
-        </div>
+        </footer>
       </div>
 
       <style>{`

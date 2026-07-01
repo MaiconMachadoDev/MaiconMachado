@@ -67,13 +67,13 @@ export const portfolioConfig = {
     },
     {
       nome: 'LinkedIn',
-      url: 'https://linkedin.com/in/seu-perfil',
+      url: 'https://www.linkedin.com/in/maiconmachado/',
       rotulo: 'Perfil no LinkedIn',
       icone: 'linkedin',
     },
     {
       nome: 'E-mail',
-      url: 'mailto:seu@email.com',
+      url: 'mailto:maiconcorporativo@outlook.com',
       rotulo: 'Enviar e-mail',
       icone: 'email',
     },
@@ -182,6 +182,17 @@ Além do desenvolvimento técnico, participei da definição da arquitetura do p
         repositorioConfidencial: true,
         linkDeploy: 'https://unicirurgia.com/',
         textoBotaoDeploy: 'Acessar Plataforma',
+      },
+      {
+        nome: 'LabyWallet',
+        descricao:
+          'Uma carteira digital inteligente desenvolvida para o armazenamento e gestão centralizada de exames, prescrições e laudos médicos. Este foi um projeto que originalmente seria descontinuado, mas propus e assumi a frente da sua remodelagem completa. A plataforma agora conta com integração avançada de Inteligência Artificial para gerar insights personalizados de saúde para o usuário, tudo construído sob rigorosos padrões de segurança e conformidade total com a LGPD.',
+        url: '#',
+        linguagem: 'Next.js · React',
+        imagemUrl: '/LabyWallet.jpg.png',
+        repositorioConfidencial: true,
+        linkDeploy: 'https://www.labywallet.com/',
+        textoBotaoDeploy: 'Acessar LabyWallet',
       },
     ],
     /** Detalhes personalizados por repositório (capa, descrição, links) */

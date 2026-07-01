@@ -35,7 +35,8 @@ jobs:
       - name: Gerar export estático
         run: npm run build
         env:
-          GITHUB_REPOSITORY: ${{ github.repository }}
+          CUSTOM_DOMAIN: maicondev.com
+          NODE_ENV: production
 
       - name: Enviar artefato para o GitHub Pages
         uses: actions/upload-pages-artifact@v3
@@ -48,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.implantacao.outputs.page_url }}
+      url: https://maicondev.com
     steps:
       - name: Implantar site
         id: implantacao

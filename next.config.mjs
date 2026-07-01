@@ -1,25 +1,13 @@
 /** @type {import('next').NextConfig} */
 
+/** Domínio de produção (GitHub Pages com CNAME). */
+const DOMINIO_PRODUCAO = 'maicondev.com';
+
 /**
- * Detecta o basePath automaticamente no CI do GitHub Actions.
- * - Repositório de usuário (ex: usuario.github.io) → sem basePath
- * - Repositório de projeto (ex: usuario/portifolio) → basePath /portifolio
- * Sobrescreva com NEXT_PUBLIC_BASE_PATH se necessário.
+ * Com domínio próprio na raiz (maicondev.com), não há basePath.
+ * Em dev local, também fica vazio → http://localhost:3000/
  */
 function obterBasePath() {
-  const nomeRepositorio = process.env.GITHUB_REPOSITORY?.split('/')[1];
-  const ehSiteDeUsuario = nomeRepositorio?.endsWith('.github.io');
-
-  if (nomeRepositorio && !ehSiteDeUsuario) {
-    return `/${nomeRepositorio}`;
-  }
-
-  // Build de produção (local ou CI): basePath do repositório no GitHub Pages
-  if (process.env.NODE_ENV === 'production') {
-    return '/MaiconMachado';
-  }
-
-  // Dev local: sem basePath → http://localhost:3000/
   return '';
 }
 
@@ -34,6 +22,7 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SITE_URL: `https://${DOMINIO_PRODUCAO}`,
   },
 };
 

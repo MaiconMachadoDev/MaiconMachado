@@ -48,7 +48,7 @@ export const portfolioConfig = {
     titulo: 'Portfólio | Maicon Machado',
     descricao:
       'Desenvolvedor Full-stack com 11 anos de experiência na área da saúde, transformando vivência clínica em soluções Health Tech de alta performance.',
-    url: 'https://maiconmachadodev.github.io/MaiconMachado',
+    url: 'https://maicondev.com',
     locale: 'pt_BR',
   },
 

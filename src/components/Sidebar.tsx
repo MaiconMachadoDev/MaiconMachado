@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import type { IconeNavegacao, IconeSocial, ItemNavegacao, RedeSocial } from '@/config/portfolio';
+import { urlAsset } from '@/utils/assets';
 
 interface SidebarProps {
   perfil: {
@@ -79,7 +80,7 @@ function ConteudoSidebar({
       <div className="flex flex-col items-center px-6 pt-10 text-center">
         <div className="relative mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-gray-100 shadow-sm">
           <Image
-            src={perfil.foto}
+            src={urlAsset(perfil.foto)}
             alt={perfil.fotoAlt}
             fill
             className="object-cover"
@@ -149,7 +150,7 @@ export function Sidebar({ perfil, navegacao, redesSociais }: SidebarProps) {
         <div className="flex items-center gap-3">
           <div className="relative h-9 w-9 overflow-hidden rounded-full border border-gray-100">
             <Image
-              src={perfil.foto}
+              src={urlAsset(perfil.foto)}
               alt={perfil.fotoAlt}
               fill
               className="object-cover"

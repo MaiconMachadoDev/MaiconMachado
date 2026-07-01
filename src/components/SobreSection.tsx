@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { urlAsset } from '@/utils/assets';
+
 interface SobreSectionProps {
   titulo: string;
   paragrafos: readonly string[];
@@ -31,7 +33,7 @@ export function SobreSection({
           <figure className="shrink-0">
             <div className="relative h-72 w-72 overflow-hidden rounded-2xl border border-gray-200 shadow-md">
               <Image
-                src={foto}
+                src={urlAsset(foto)}
                 alt={fotoAlt}
                 fill
                 className="object-cover"

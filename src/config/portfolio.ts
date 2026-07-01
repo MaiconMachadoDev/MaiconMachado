@@ -178,7 +178,7 @@ A plataforma foi construída com **Next.js**, **React** e **TypeScript**, utiliz
 Além do desenvolvimento técnico, participei da definição da arquitetura do produto, modelagem de dados, criação da experiência do usuário e evolução contínua da plataforma em conjunto com equipes hospitalares, transformando necessidades operacionais em funcionalidades que aumentam a eficiência, reduzem falhas e melhoram a rastreabilidade dos processos cirúrgicos.`,
         url: '#',
         linguagem: 'Next.js · React · TypeScript',
-        imagemUrl: '/Unicirurgia.jpg.png',
+        imagemUrl: '/images/projects/unicirurgia.png',
         repositorioConfidencial: true,
         linkDeploy: 'https://unicirurgia.com/',
         textoBotaoDeploy: 'Acessar Plataforma',
@@ -189,7 +189,7 @@ Além do desenvolvimento técnico, participei da definição da arquitetura do p
           'Uma carteira digital inteligente desenvolvida para o armazenamento e gestão centralizada de exames, prescrições e laudos médicos. Este foi um projeto que originalmente seria descontinuado, mas propus e assumi a frente da sua remodelagem completa. A plataforma agora conta com integração avançada de Inteligência Artificial para gerar insights personalizados de saúde para o usuário, tudo construído sob rigorosos padrões de segurança e conformidade total com a LGPD.',
         url: '#',
         linguagem: 'Next.js · React',
-        imagemUrl: '/LabyWallet.jpg.png',
+        imagemUrl: '/images/projects/labywallet.png',
         repositorioConfidencial: true,
         linkDeploy: 'https://www.labywallet.com/',
         textoBotaoDeploy: 'Acessar LabyWallet',
@@ -202,12 +202,12 @@ Além do desenvolvimento técnico, participei da definição da arquitetura do p
         descricao: `Projeto desenvolvido como desafio da Alura para realizar sorteios de Amigo Secreto. A aplicação permite adicionar participantes a uma lista e sortear nomes de forma aleatória, aplicando conceitos práticos de manipulação do DOM. Construído com HTML5, CSS3 e JavaScript Vanilla.`,
         url: 'https://github.com/MaiconMachadoDev/challenge-amigo-secreto_pt',
         linguagem: 'JavaScript',
-        imagemUrl: '/AmigoSecreto.jpg.png',
+        imagemUrl: '/images/projects/amigosecreto.png',
         linkDeploy: 'https://maiconmachadodev.github.io/challenge-amigo-secreto_pt/',
         textoBotaoDeploy: 'Ver site',
       },
       AquaQuiz: {
-        imagemUrl: '/AquaQuiz.jpg.png',
+        imagemUrl: '/images/projects/aquaquiz.png',
         descricao: `AquaQuiz 🐠
 Um jogo interativo de adivinhação focado no nicho de aquarismo, criado como projeto de estudo para consolidar fundamentos de desenvolvimento web front-end. O jogador é desafiado a identificar corretamente diversos itens e equipamentos relacionados a aquários.
 

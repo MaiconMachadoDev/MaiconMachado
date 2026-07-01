@@ -7,10 +7,6 @@
  * Sobrescreva com NEXT_PUBLIC_BASE_PATH se necessário.
  */
 function obterBasePath() {
-  if (process.env.NEXT_PUBLIC_BASE_PATH !== undefined) {
-    return process.env.NEXT_PUBLIC_BASE_PATH;
-  }
-
   const nomeRepositorio = process.env.GITHUB_REPOSITORY?.split('/')[1];
   const ehSiteDeUsuario = nomeRepositorio?.endsWith('.github.io');
 
@@ -18,6 +14,12 @@ function obterBasePath() {
     return `/${nomeRepositorio}`;
   }
 
+  // Build de produção (local ou CI): basePath do repositório no GitHub Pages
+  if (process.env.NODE_ENV === 'production') {
+    return '/MaiconMachado';
+  }
+
+  // Dev local: sem basePath → http://localhost:3000/
   return '';
 }
 
@@ -26,11 +28,12 @@ const basePath = obterBasePath();
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  ...(basePath
-    ? { basePath, assetPrefix: basePath }
-    : {}),
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

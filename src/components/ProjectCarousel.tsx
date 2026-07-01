@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import type { ProjetoEstendido } from '@/types/projeto';
+import { urlAsset } from '@/utils/assets';
 import { renderizarTextoComNegrito } from '@/utils/texto';
 
 interface ProjectCarouselProps {
@@ -76,7 +77,7 @@ export function ProjectCarousel({ projetos }: ProjectCarouselProps) {
               >
                 {projeto.imagemUrl ? (
                   <img
-                    src={projeto.imagemUrl}
+                    src={urlAsset(projeto.imagemUrl)}
                     alt={`Capa do projeto ${projeto.nome}`}
                     className="h-full w-full object-cover transition-all duration-800 ease-carousel"
                     draggable={false}

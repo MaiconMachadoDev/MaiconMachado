@@ -1,0 +1,38 @@
+{
+  "perfil": {
+    "nome": "Maicon Machado",
+    "bio": "Desenvolvedor front-end/full-stack apaixonado por criar experiências web limpas, acessíveis e performáticas.",
+    "cargo": "Desenvolvedor Front-end / Full-stack"
+  },
+  "redesSociais": [
+    {
+      "nome": "GitHub",
+      "url": "https://github.com/MaiconMachadoDev",
+      "rotulo": "Perfil no GitHub"
+    },
+    {
+      "nome": "LinkedIn",
+      "url": "https://linkedin.com/in/seu-perfil",
+      "rotulo": "Perfil no LinkedIn"
+    },
+    {
+      "nome": "E-mail",
+      "url": "mailto:seu@email.com",
+      "rotulo": "Enviar e-mail"
+    }
+  ],
+  "github": {
+    "usuario": "MaiconMachadoDev"
+  },
+  "seo": {
+    "titulo": "Portfólio | Maicon Machado",
+    "descricao": "Portfólio pessoal e mini blog com projetos open source, artigos e experiências em desenvolvimento web.",
+    "url": "https://maiconmachadodev.github.io/MaiconMachado",
+    "locale": "pt_BR"
+  },
+  "site": {
+    "tituloProjetos": "Projetos",
+    "subtituloProjetos": "Repositórios públicos buscados automaticamente via API do GitHub no momento do build.",
+    "rodape": "Construído com Next.js e hospedado no GitHub Pages."
+  }
+}

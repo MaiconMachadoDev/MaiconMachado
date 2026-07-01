@@ -151,9 +151,9 @@ export const portfolioConfig = {
   },
 
   projetos: {
-    titulo: 'Projetos',
+    titulo: 'Meus Projetos GitHub',
     subtitulo:
-      'Repositórios públicos buscados automaticamente via API do GitHub no momento do build.',
+      'Uma vitrine dinâmica dos meus repositórios públicos, atualizados automaticamente.',
     pastaImagens: '/images/projects',
     repositoriosOcultos: [
       'demonstracaoAnestesio',

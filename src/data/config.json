@@ -31,8 +31,8 @@
     "locale": "pt_BR"
   },
   "site": {
-    "tituloProjetos": "Projetos",
-    "subtituloProjetos": "Repositórios públicos buscados automaticamente via API do GitHub no momento do build.",
+    "tituloProjetos": "Meus Projetos GitHub",
+    "subtituloProjetos": "Uma vitrine dinâmica dos meus repositórios públicos, atualizados automaticamente.",
     "rodape": "Construído com Next.js e hospedado no GitHub Pages."
   }
 }

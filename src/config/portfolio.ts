@@ -1,3 +1,5 @@
+import type { DetalhesRepositorio } from '@/utils/projetos';
+
 export type IconeNavegacao = 'home' | 'projetos' | 'sobre';
 export type IconeSocial = 'github' | 'linkedin' | 'email';
 export type TecnologiaId = 'react' | 'nextjs' | 'javascript' | 'tailwind' | 'git';
@@ -152,6 +154,63 @@ export const portfolioConfig = {
     titulo: 'Projetos',
     subtitulo:
       'Repositórios públicos buscados automaticamente via API do GitHub no momento do build.',
+    pastaImagens: '/images/projects',
+    repositoriosOcultos: [
+      'demonstracaoAnestesio',
+      'SiteSeuaquario',
+      'william-contabilidade',
+      'portifolio-site',
+      'minibog_React',
+      'MaiconMachado',
+      'challenge-amigo-secreto_pt',
+      'estudo-JS',
+    ],
+    /** Projetos adicionados manualmente (não vêm da API do GitHub) */
+    projetosManuais: [
+      {
+        nome: 'Unicirurgia',
+        descricao: `O **UniCirurgia** é uma plataforma completa de gestão cirúrgica e hospitalar desenvolvida para centralizar o gerenciamento de agendamentos, equipes médicas, pacientes, materiais, equipamentos e fluxos operacionais do centro cirúrgico.
+
+Atuei como responsável pela arquitetura e desenvolvimento da aplicação, projetando uma solução escalável, segura e de alta disponibilidade para um ambiente crítico da área da saúde. Desenvolvi funcionalidades que abrangem desde o mapa cirúrgico em tempo real e controle de salas até dashboards gerenciais, gestão de convênios, médicos, equipamentos, materiais e processos administrativos.
+
+A plataforma foi construída com **Next.js**, **React** e **TypeScript**, utilizando uma arquitetura moderna focada em desempenho, experiência do usuário e manutenção. Também implementei sincronização offline com **PouchDB/CouchDB**, integração com serviços em nuvem, autenticação, controle de permissões, geração de relatórios, dashboards analíticos e otimização de consultas e estado da aplicação para garantir rapidez e confiabilidade no uso diário.
+
+Além do desenvolvimento técnico, participei da definição da arquitetura do produto, modelagem de dados, criação da experiência do usuário e evolução contínua da plataforma em conjunto com equipes hospitalares, transformando necessidades operacionais em funcionalidades que aumentam a eficiência, reduzem falhas e melhoram a rastreabilidade dos processos cirúrgicos.`,
+        url: '#',
+        linguagem: 'Next.js · React · TypeScript',
+        imagemUrl: '/Unicirurgia.jpg.png',
+        repositorioConfidencial: true,
+        linkDeploy: 'https://unicirurgia.com/',
+        textoBotaoDeploy: 'Acessar Plataforma',
+      },
+    ],
+    /** Detalhes personalizados por repositório (capa, descrição, links) */
+    detalhesPorRepositorio: {
+      AluraProject: {
+        nome: 'Amigo Secreto',
+        descricao: `Projeto desenvolvido como desafio da Alura para realizar sorteios de Amigo Secreto. A aplicação permite adicionar participantes a uma lista e sortear nomes de forma aleatória, aplicando conceitos práticos de manipulação do DOM. Construído com HTML5, CSS3 e JavaScript Vanilla.`,
+        url: 'https://github.com/MaiconMachadoDev/challenge-amigo-secreto_pt',
+        linguagem: 'JavaScript',
+        imagemUrl: '/AmigoSecreto.jpg.png',
+        linkDeploy: 'https://maiconmachadodev.github.io/challenge-amigo-secreto_pt/',
+        textoBotaoDeploy: 'Ver site',
+      },
+      AquaQuiz: {
+        imagemUrl: '/AquaQuiz.jpg.png',
+        descricao: `AquaQuiz 🐠
+Um jogo interativo de adivinhação focado no nicho de aquarismo, criado como projeto de estudo para consolidar fundamentos de desenvolvimento web front-end. O jogador é desafiado a identificar corretamente diversos itens e equipamentos relacionados a aquários.
+
+🚀 Tecnologias e Técnicas Aplicadas:
+
+• JavaScript (ES6+): Lógica principal do jogo, validação de respostas e controle de pontuação.
+• Manipulação do DOM: Atualização dinâmica da interface do usuário em tempo real sem recarregar a página.
+• Event Listeners: Captura de interações do usuário (cliques e teclado) de forma otimizada.
+• HTML5 & CSS3: Estruturação semântica e estilização responsiva para garantir jogabilidade em diferentes tamanhos de tela.
+• Gerenciamento de Estado: Controle do fluxo do jogo (início, acertos, erros e fim de jogo) utilizando variáveis locais.`,
+        linkDeploy: 'https://maiconmachadodev.github.io/AquaQuiz/',
+        textoBotaoDeploy: 'Jogue agora',
+      },
+    } as Record<string, DetalhesRepositorio>,
   },
 
   sobre: {

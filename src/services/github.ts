@@ -20,7 +20,8 @@ interface GitHubApiRepo {
  * Retorna array vazio em caso de falha (rate limit, rede, etc.).
  */
 export async function buscarRepositorios(
-  usuario: string
+  usuario: string,
+  repositoriosOcultos: readonly string[] = []
 ): Promise<RepositorioGitHub[]> {
   try {
     const resposta = await fetch(
@@ -42,8 +43,15 @@ export async function buscarRepositorios(
 
     const dados: GitHubApiRepo[] = await resposta.json();
 
+    const ocultos = new Set(
+      repositoriosOcultos.map((nome) => nome.toLowerCase())
+    );
+
     return dados
-      .filter((repo) => !repo.fork)
+      .filter(
+        (repo) =>
+          !repo.fork && !ocultos.has(repo.name.toLowerCase())
+      )
       .map((repo) => ({
         nome: repo.name,
         descricao: repo.description,

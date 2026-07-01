@@ -48,7 +48,7 @@ function IconeTecnologia({ id }: { id: TecnologiaId }) {
 export function FloatingTechIcons({ tecnologias }: FloatingTechIconsProps) {
   return (
     <div
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 z-10 overflow-hidden"
       aria-hidden="true"
     >
       {tecnologias.map((tech) => (

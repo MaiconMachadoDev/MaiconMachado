@@ -27,11 +27,26 @@ const config: Config = {
       animation: {
         float: 'float 4s ease-in-out infinite',
         'bounce-slow': 'bounce 2.5s ease-in-out infinite',
+        blob: 'blob 9s ease-in-out infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-12px)' },
+        },
+        blob: {
+          '0%, 100%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '25%': {
+            transform: 'translate(24px, -32px) scale(1.06)',
+          },
+          '50%': {
+            transform: 'translate(-16px, 20px) scale(0.94)',
+          },
+          '75%': {
+            transform: 'translate(12px, 28px) scale(1.03)',
+          },
         },
       },
     },

@@ -182,6 +182,19 @@ Além do desenvolvimento técnico, participei da definição da arquitetura do p
         textoBotaoDeploy: 'Acessar Plataforma',
       },
       {
+        nome: 'Inova Menu',
+        descricao: `O **Inova Menu** é uma plataforma avançada de cardápio digital e gestão de pedidos, projetada sob a marca da Inova Rise para digitalizar o atendimento e elevar a experiência do cliente em estabelecimentos comerciais.
+
+Atuei em todo o ciclo de vida do projeto, do desenvolvimento full-stack à infraestrutura. Construí uma interface com design limpo e de alta performance, integrada a um painel administrativo para controle em tempo real. Para garantir escalabilidade e entregas ágeis, arquitetei o ambiente de produção utilizando conteinerização com Docker em instâncias AWS EC2, orquestrando o pipeline de CI/CD através do GitHub Actions.`,
+        url: '#',
+        linguagem:
+          'Next.js · React · TypeScript · Tailwind CSS · Node.js · Docker · AWS EC2 · GitHub Actions',
+        imagemUrl: '/inovamenu.jpg',
+        repositorioConfidencial: true,
+        linkDeploy: 'https://inovamenu.com.br/',
+        textoBotaoDeploy: 'Acessar Plataforma',
+      },
+      {
         nome: 'LabyWallet',
         descricao:
           'Uma carteira digital inteligente desenvolvida para o armazenamento e gestão centralizada de exames, prescrições e laudos médicos. Este foi um projeto que originalmente seria descontinuado, mas propus e assumi a frente da sua remodelagem completa. A plataforma agora conta com integração avançada de Inteligência Artificial para gerar insights personalizados de saúde para o usuário, tudo construído sob rigorosos padrões de segurança e conformidade total com a LGPD. A persistência de dados utiliza **PostgreSQL**, e o desenvolvimento é realizado com **Cursor** como ambiente principal de codificação.',

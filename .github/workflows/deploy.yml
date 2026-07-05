@@ -26,7 +26,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Instalar dependências
@@ -56,22 +56,33 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Ativar certificado HTTPS (Let's Encrypt)
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           CUSTOM_DOMAIN: maicondev.com
         run: |
-          echo "Configurando domínio personalizado e forçando HTTPS..."
-          curl -sf -X PATCH \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" \
-            -d "{\"cname\":\"${CUSTOM_DOMAIN}\",\"https_enforced\":true}"
+          api="https://api.github.com/repos/${GITHUB_REPOSITORY}/pages"
+          auth=(-H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${GH_TOKEN}" -H "X-GitHub-Api-Version: 2022-11-28")
 
-          echo "Verificando status do certificado..."
-          curl -sf \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" \
-            | jq '{cname, https_enforced, status, html_url}'
+          echo "Estado atual do GitHub Pages:"
+          curl -sS "${auth[@]}" "$api" | jq '{cname, https_enforced, status, html_url}'
+
+          echo "Configurando domínio personalizado..."
+          http_code=$(curl -sS -o /tmp/pages-cname.json -w "%{http_code}" -X PATCH "${auth[@]}" "$api" \
+            -d "{\"cname\":\"${CUSTOM_DOMAIN}\"}")
+          echo "PATCH cname → HTTP ${http_code}"
+          jq . /tmp/pages-cname.json
+
+          echo "Tentando ativar Enforce HTTPS..."
+          http_code=$(curl -sS -o /tmp/pages-https.json -w "%{http_code}" -X PATCH "${auth[@]}" "$api" \
+            -d '{"https_enforced":true}')
+          echo "PATCH https_enforced → HTTP ${http_code}"
+          jq . /tmp/pages-https.json
+
+          if [ "$http_code" != "200" ]; then
+            echo "::warning::HTTPS não pôde ser ativado via API (HTTP ${http_code}). Ative em Settings → Pages → Enforce HTTPS quando o certificado estiver disponível."
+            exit 0
+          fi
+
+          echo "Configuração final:"
+          curl -sS "${auth[@]}" "$api" | jq '{cname, https_enforced, status, html_url}'
